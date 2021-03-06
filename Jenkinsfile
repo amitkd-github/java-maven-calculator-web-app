@@ -24,7 +24,9 @@ pipeline {
 			}
 		}
 		stage('SONAR QUBE ANALYSIS') {
-			sh 'echo sonar analysis completed'
+			steps {
+				sh 'echo sonar analysis completed'
+			}
 		}
 		
 	}
