@@ -1,5 +1,4 @@
 pipeline {
-<<<<<<< HEAD
         agent {
                 node {
                         label 'java-build-srv1'
@@ -30,7 +29,7 @@ pipeline {
                                 sh 'echo sonar analysis completed'
                         }
                 }
-		stage('deploy build into nexus repository') {
+				stage('deploy build into nexus repository') {
                         steps {
                                 sh 'mvn deploy'
                                 sh 'echo build depolyed in nexus completed'
@@ -38,38 +37,5 @@ pipeline {
                 }
 
         }
-=======
-	agent {
-		node {
-			label 'java-build-srv1'
-		}
-	}
-	
-	stages {
-		stage('SCM') {
-			steps {
-				git 'https://github.com/amitkd-github/java-maven-calculator-web-app.git'
-			}
-		}
-		stage('BUILD') {
-			steps {
-				sh 'mvn clean package'
-				sh 'echo build completed'
-			}
-		}
-		stage('UNIT TEST') {
-			steps {
-				sh 'mvn test'
-				sh 'echo unit test completed'
-			}
-		}
-		stage('SONAR QUBE ANALYSIS') {
-			steps {
-				sh 'echo sonar analysis completed'
-			}
-		}
-		
-	}
->>>>>>> parent of 90daac3... sonar qube analysis added
 }
 
