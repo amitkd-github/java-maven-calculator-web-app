@@ -29,7 +29,8 @@ pipeline {
                                 sh 'echo sonar analysis completed'
                         }
                 }
-				stage('deploy build into nexus repository') {
+
+		stage('deploy build into nexus repository') {
                         steps {
                                 sh 'mvn deploy'
                                 sh 'echo build depolyed in nexus completed'
