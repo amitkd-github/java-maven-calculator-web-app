@@ -25,6 +25,7 @@ pipeline {
 		}
 		stage('SONAR QUBE ANALYSIS') {
 			steps {
+				sh 'mvn sonar:sonar -Dsonar.host.url=http://3.94.95.71:9000 -Dsonar.login=3a9863bfbd281bc237ec2263abe7a0ed0c868e6a'
 				sh 'echo sonar analysis completed'
 			}
 		}
