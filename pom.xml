@@ -77,7 +77,7 @@
     </dependencies>
 
     <build>
-        <finalName>calculator</finalName>
+        <finalName>calculator-1.1-SNAPSHOT</finalName>
 
         <plugins>
             <plugin>

@@ -1,5 +1,8 @@
 FROM tomcat
-MAINTAINER Ma Ping
 
-RUN rm -rf $CATALINA_HOME/webapps/ROOT
-COPY target/calculator.war $CATALINA_HOME/webapps/ROOT.war
+WORKDIR "/usr/local/tomcat"
+
+ADD target/calculator-1.1-SNAPSHOT.war ./webapps/
+
+CMD ["sh", "/usr/local/tomcat/bin/startup.sh"]
+
