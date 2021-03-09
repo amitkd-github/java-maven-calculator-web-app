@@ -39,8 +39,7 @@ pipeline {
 				stage('DOCKER IMAGE BUILD') {
                         steps {
                                 sh 'python read-version.py > version.txt'
-				sh 'export cur_version=`cat version.txt`'
-				sh 'sudo docker image build -t amit2019dock/calculator:`echo $cur_version` .'
+				sh 'sudo docker image build -t amit2019dock/calculator:`cat version.txt` .'
                                 sh 'echo docker image build completed'
                         }
                 }
