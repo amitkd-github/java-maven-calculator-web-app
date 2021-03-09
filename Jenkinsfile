@@ -45,7 +45,7 @@ pipeline {
                 }
 		stage('DOCKER IMAGE PUSH TO DOCKER-HUB') {
                         steps {
-                                sh 'sudo docker push amit2019dock/calculator:`echo $cur_version`'
+                                sh 'sudo docker push amit2019dock/calculator:`cat version.txt`'
 				sh 'echo image push completed'
                         }
                 }
